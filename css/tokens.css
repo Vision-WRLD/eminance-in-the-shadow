@@ -1,0 +1,92 @@
+/* ============================================================
+   NOCTURNE — DESIGN TOKENS
+   A blend of two houses, reimagined for the dark:
+     · Tiffany & Co.  → restraint, generous whitespace, a centered
+                         symmetrical mark, a single signature accent,
+                         confident editorial serif.
+     · Van Cleef & Arpels → warm haute-joaillerie gold, full-bleed
+                         editorial imagery, celestial/night motifs,
+                         poetic voice, slow elegant motion.
+   Reimagined on an obsidian base with champagne gold as the hero
+   accent and a whisper of patinated jade as the Tiffany nod.
+   ============================================================ */
+:root {
+  /* ---- Core obsidian palette ---- */
+  --color-bg:           #070707;
+  --color-bg-elevated:  #101010;
+  --color-bg-overlay:   #0c0c0c;
+  --color-surface:      #181818;
+  --color-surface-2:    #1f1d18;
+
+  /* ---- Champagne gold spectrum (VCA warmth) ---- */
+  --color-gold:         #c9a84c;
+  --color-gold-light:   #e8c97a;
+  --color-gold-pale:    #f5e6b8;
+  --color-gold-muted:   #6b5820;
+  --color-gold-deep:    #8a7028;
+
+  /* ---- Patinated jade — the Tiffany nod, used sparingly ---- */
+  --color-jade:         #6fb3a8;
+  --color-jade-deep:    #2f5e57;
+
+  /* ---- Typography ink ---- */
+  --color-text-primary:   #f1ede5;
+  --color-text-secondary: #a8a08a;
+  --color-text-muted:     #5f594c;
+
+  /* ---- Utility ---- */
+  --color-white:        #ffffff;
+  --color-border:       rgba(201, 168, 76, 0.14);
+  --color-border-soft:  rgba(241, 237, 229, 0.08);
+  --color-border-hover: rgba(201, 168, 76, 0.42);
+
+  /* ---- Spacing scale (Tiffany-generous) ---- */
+  --space-2xs: 0.25rem;
+  --space-xs:  0.5rem;
+  --space-sm:  1rem;
+  --space-md:  2rem;
+  --space-lg:  4rem;
+  --space-xl:  8rem;
+  --space-2xl: 12rem;
+
+  /* ---- Type families ---- */
+  --font-display: 'Cormorant Garamond', 'Times New Roman', Georgia, serif;
+  --font-body:    'Montserrat', system-ui, -apple-system, sans-serif;
+
+  /* ---- Type scale ---- */
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.375rem;
+  --text-2xl:  1.75rem;
+  --text-3xl:  2.5rem;
+  --text-4xl:  3.5rem;
+  --text-5xl:  5rem;
+  --text-hero: clamp(3.25rem, 7.5vw, 6rem);
+  --text-editorial: clamp(2rem, 4.5vw, 3.5rem);
+
+  /* ---- Letter-spacing tokens ---- */
+  --ls-wordmark: 0.42em;
+  --ls-nav:      0.22em;
+  --ls-eyebrow:  0.38em;
+
+  /* ---- Motion (VCA: slow, unhurried) ---- */
+  --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:     cubic-bezier(0.4, 0, 1, 1);
+  --ease-soft:   cubic-bezier(0.33, 0, 0.2, 1);
+  --duration-fast: 220ms;
+  --duration-mid:  520ms;
+  --duration-slow: 900ms;
+  --duration-cine: 1400ms;
+
+  /* ---- Shadows ---- */
+  --shadow-gold:  0 0 60px rgba(201, 168, 76, 0.07);
+  --shadow-card:  0 12px 60px rgba(0, 0, 0, 0.55);
+  --shadow-float: 0 28px 90px rgba(0, 0, 0, 0.8);
+
+  /* ---- Layout ---- */
+  --maxw:       1440px;
+  --maxw-text:  680px;
+  --nav-h:      84px;
+}

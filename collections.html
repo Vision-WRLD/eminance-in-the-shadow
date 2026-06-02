@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://images.unsplash.com data:; media-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="color-scheme" content="dark" />
+  <title>Collections — NOCTURNE</title>
+  <meta name="description" content="Explore the NOCTURNE collections — rings, necklaces, earrings and high jewelry, forged in darkness." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css?v=16" />
+  <link rel="stylesheet" href="css/base.css?v=16" />
+  <link rel="stylesheet" href="css/components.css?v=16" />
+  <link rel="stylesheet" href="css/pages.css?v=16" />
+</head>
+<body>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+  <div id="loader" aria-hidden="true"><div class="brand">NOCTURNE</div><div class="load-line"></div></div>
+
+  <header class="nav scrolled" id="nav">
+    <div class="nav__inner">
+      <div class="nav__left">
+        <a class="nav__link" href="collections.html" aria-current="page" data-cursor>Collections</a>
+        <a class="nav__link" href="bespoke.html" data-cursor>Bespoke</a>
+        <a class="nav__link" href="craft.html" data-cursor>Craft</a>
+      </div>
+      <a href="index.html" class="nav__logo" data-cursor>NOCTURNE</a>
+      <div class="nav__right">
+        <button class="icon-btn" data-desktop aria-label="Search" data-cursor><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+        <button class="icon-btn" aria-label="Shopping bag" data-cursor><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg><span class="bag-count">2</span></button>
+        <a class="btn-appointment" data-desktop href="contact.html" data-cursor>Book an Appointment</a>
+        <button class="nav__hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" data-cursor><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="collections.html" aria-current="page" data-cursor>Collections</a>
+    <a href="bespoke.html" data-cursor>Bespoke</a>
+    <a href="craft.html" data-cursor>Craft</a>
+    <a href="contact.html" data-cursor>Contact</a>
+    <span class="mm-sep"></span>
+    <a href="contact.html" class="gold" data-cursor>Book an Appointment</a>
+  </div>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-hero__bg" style="background-image:url('https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=1600&q=80&auto=format&fit=crop');"></div>
+      <div class="page-hero__inner wrap">
+        <p class="eyebrow reveal">The Maison</p>
+        <h1 class="reveal" data-delay="80">Collections</h1>
+        <p class="reveal" data-delay="160">Pieces for the after hours — each conceived in shadow, finished in champagne gold and set by hand.</p>
+      </div>
+    </section>
+
+    <section class="section-pad" style="padding-top:var(--space-md)">
+      <div class="wrap">
+        <div class="shop-toolbar reveal">
+          <button class="tb-btn" id="filterToggle" aria-expanded="false" data-cursor>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 6h18M6 12h12M10 18h4"/></svg>
+            Sort &amp; Filters
+          </button>
+          <span class="tb-count" id="resultCount"></span>
+          <label class="tb-sort">
+            <span>Sort</span>
+            <select id="sortSelect" data-cursor>
+              <option value="featured">Featured</option>
+              <option value="az">Alphabetical, A–Z</option>
+              <option value="za">Alphabetical, Z–A</option>
+              <option value="plow">Price, low to high</option>
+              <option value="phigh">Price, high to low</option>
+              <option value="new">Newest</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="shop">
+          <aside class="filter-panel" id="filterPanel" aria-label="Filters" hidden>
+            <div class="fp-head"><h3>Filters</h3><button id="filterClose" aria-label="Close filters" data-cursor>✕</button></div>
+            <div class="fp-group">
+              <h4>Price</h4>
+              <div class="range"><input type="range" id="priceMin" data-cursor><input type="range" id="priceMax" data-cursor></div>
+              <div class="range-vals"><span id="priceMinVal"></span><span id="priceMaxVal"></span></div>
+            </div>
+            <div class="fp-group"><h4>Jewelry Type</h4><div class="fp-opts" id="fType"></div></div>
+            <div class="fp-group"><h4>Material</h4><div class="fp-opts" id="fMaterial"></div></div>
+            <div class="fp-group"><h4>Size</h4><div class="fp-chips" id="fSize"></div></div>
+            <div class="fp-actions"><button id="filterClear" class="btn--text" data-cursor>Clear all</button><button id="filterApply" class="btn btn--primary" data-cursor>Show results</button></div>
+          </aside>
+          <div class="filter-scrim" id="filterScrim" hidden></div>
+          <div class="products__grid" id="productsGrid"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter" id="newsletter">
+      <canvas id="noise-canvas"></canvas>
+      <div class="newsletter__inner reveal">
+        <h2>Join the Inner Circle.</h2>
+        <p>First access to new collections. Private events. The world of NOCTURNE.</p>
+        <form class="newsletter__form" id="newsletterForm">
+          <label for="nl-email" style="position:absolute;left:-9999px">Email address</label>
+          <input id="nl-email" type="email" placeholder="Your email address" required />
+          <button class="newsletter__submit" type="submit" aria-label="Subscribe" data-cursor><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></button>
+        </form>
+        <p class="privacy">We respect the night, and your privacy. Unsubscribe anytime.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="logo">NOCTURNE</div>
+          <p>Fine jewelry forged in darkness, finished by hand. Established in the small hours.</p>
+          <div class="footer__socials">
+            <a href="#" aria-label="Instagram" data-cursor><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+            <a href="#" aria-label="TikTok" data-cursor><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M15 4c.5 2.5 2 4 4.5 4.3"/><path d="M15 4v9.5a4.5 4.5 0 1 1-4-4.47"/></svg></a>
+            <a href="#" aria-label="Pinterest" data-cursor><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="9"/><path d="M12 7c-2 0-3.2 1.4-3.2 3 0 .9.4 1.6 1 1.9M12 7c1.8 0 3 1.1 3 2.8 0 2-1.1 3.4-2.6 3.4-.8 0-1.4-.6-1.2-1.4M11.2 12.7 10 18"/></svg></a>
+          </div>
+        </div>
+        <div class="footer__col"><h4>Collections</h4><ul><li><a href="collections.html" data-cursor>Rings</a></li><li><a href="collections.html" data-cursor>Necklaces</a></li><li><a href="collections.html" data-cursor>Earrings</a></li><li><a href="collections.html" data-cursor>High Jewelry</a></li></ul></div>
+        <div class="footer__col"><h4>Services</h4><ul><li><a href="bespoke.html" data-cursor>Bespoke Design</a></li><li><a href="contact.html" data-cursor>Book Appointment</a></li><li><a href="craft.html" data-cursor>Care &amp; Repair</a></li><li><a href="craft.html" data-cursor>Engraving</a></li></ul></div>
+        <div class="footer__col"><h4>Contact</h4><ul><li><a href="contact.html" data-cursor>The Atelier</a></li><li><a href="contact.html" data-cursor>Client Care</a></li><li><a href="contact.html" data-cursor>+1 (000) 000 0000</a></li><li><a href="contact.html" data-cursor>night@nocturne.com</a></li></ul></div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 NOCTURNE. All rights reserved.</span>
+        <div class="legal"><a href="privacy.html" data-cursor>Privacy</a><a href="terms.html" data-cursor>Terms</a><a href="cookies.html" data-cursor>Cookies</a></div>
+        <span class="tagline">Crafted with obsession.</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top" data-cursor><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="m6 14 6-6 6 6"/></svg></button>
+
+  <script src="js/main.js?v=16" defer></script>
+  <script src="js/data.js?v=16" defer></script>
+  <script src="js/collections.js?v=16" defer></script>
+</body>
+</html>

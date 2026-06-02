@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://images.unsplash.com data:; media-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="color-scheme" content="dark" />
+  <title>Craft — NOCTURNE</title>
+  <meta name="description" content="800 hours of pure devotion — the craft, materials and process behind every NOCTURNE piece." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css?v=16" />
+  <link rel="stylesheet" href="css/base.css?v=16" />
+  <link rel="stylesheet" href="css/components.css?v=16" />
+  <link rel="stylesheet" href="css/pages.css?v=16" />
+</head>
+<body>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+  <div id="loader" aria-hidden="true"><div class="brand">NOCTURNE</div><div class="load-line"></div></div>
+
+  <header class="nav scrolled" id="nav">
+    <div class="nav__inner">
+      <div class="nav__left">
+        <a class="nav__link" href="collections.html" data-cursor>Collections</a>
+        <a class="nav__link" href="bespoke.html" data-cursor>Bespoke</a>
+        <a class="nav__link" href="craft.html" aria-current="page" data-cursor>Craft</a>
+      </div>
+      <a href="index.html" class="nav__logo" data-cursor>NOCTURNE</a>
+      <div class="nav__right">
+        <button class="icon-btn" data-desktop aria-label="Search" data-cursor><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+        <button class="icon-btn" aria-label="Shopping bag" data-cursor><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg><span class="bag-count">2</span></button>
+        <a class="btn-appointment" data-desktop href="contact.html" data-cursor>Book an Appointment</a>
+        <button class="nav__hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" data-cursor><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="collections.html" data-cursor>Collections</a>
+    <a href="bespoke.html" data-cursor>Bespoke</a>
+    <a href="craft.html" aria-current="page" data-cursor>Craft</a>
+    <a href="contact.html" data-cursor>Contact</a>
+    <span class="mm-sep"></span>
+    <a href="contact.html" class="gold" data-cursor>Book an Appointment</a>
+  </div>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-hero__bg" style="background-image:url('https://images.unsplash.com/photo-1518370265276-f22b706aeac8?w=1600&q=80&auto=format&fit=crop');"></div>
+      <div class="page-hero__inner wrap">
+        <p class="eyebrow reveal">Our Craft</p>
+        <h1 class="reveal" data-delay="80">800 Hours of Pure Devotion</h1>
+        <p class="reveal" data-delay="160">We measure our work not in units, but in the years a single piece will outlive us.</p>
+      </div>
+    </section>
+
+    <section class="section-pad" style="padding-top:var(--space-md)">
+      <div class="wrap craft">
+        <div class="craft__text reveal">
+          <p class="eyebrow">The Hand</p>
+          <h2>Where ore becomes<br/>inheritance.</h2>
+          <p>Each NOCTURNE piece begins as raw metal and ends as something passed down. Between those two states lies the patient hand of a master — setting, polishing, and refusing every compromise.</p>
+          <p>Nothing here is automated. The night gives us time, and we spend all of it.</p>
+          <div class="craft__stats">
+            <div class="craft-stat"><div class="num">800</div><div class="label">Hours</div></div>
+            <div class="craft-stat"><div class="num">47</div><div class="label">Artisans</div></div>
+            <div class="craft-stat"><div class="num">142</div><div class="label">Years</div></div>
+          </div>
+        </div>
+        <div class="craft__canvas-wrap reveal" data-delay="120"><canvas id="craft-canvas"></canvas></div>
+      </div>
+    </section>
+
+    <!-- Process timeline -->
+    <section class="section-pad" style="padding-top:0">
+      <div class="wrap">
+        <div class="sec-head"><p class="eyebrow reveal">The Process</p><h2 class="section-title reveal" data-delay="80">Four movements, one piece.</h2></div>
+        <div class="timeline">
+          <div class="tl-step reveal"><div class="no">01</div><h4>Design</h4><p>A private consultation becomes a sketch, then a wax study held in the hand.</p></div>
+          <div class="tl-step reveal" data-delay="90"><div class="no">02</div><h4>Casting</h4><p>Metal is drawn from a single ingot and cast, then filed to a whisper.</p></div>
+          <div class="tl-step reveal" data-delay="180"><div class="no">03</div><h4>Setting</h4><p>Each stone is hand-set under loupe — the slowest, most exacting hour.</p></div>
+          <div class="tl-step reveal" data-delay="270"><div class="no">04</div><h4>Finish</h4><p>Days of polishing until the surface holds the room, and the night.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Materials editorial -->
+    <section class="feature">
+      <div class="feature__img reveal" style="background-image:linear-gradient(180deg, rgba(7,7,7,0.2), rgba(7,7,7,0.5)), url('https://images.unsplash.com/photo-1611107683227-e9060eccd846?w=1100&q=80&auto=format&fit=crop');"></div>
+      <div class="feature__body">
+        <p class="eyebrow reveal">Materials</p>
+        <h2 class="reveal" data-delay="80">Only what the<br/>earth gives slowly.</h2>
+        <p class="reveal" data-delay="160">Responsibly sourced gold, platinum and conflict-free stones — chosen for the way they hold light against the dark, and certified for the way they were won.</p>
+        <div class="reveal" data-delay="240"><a href="collections.html" class="btn btn--primary shimmer" data-cursor>See the Collections</a></div>
+      </div>
+    </section>
+
+    <!-- Celestial -->
+    <section class="celestial" id="celestial">
+      <canvas id="celestial-canvas"></canvas>
+      <div class="celestial__content">
+        <h2>
+          <span class="line reveal">Every atom.</span>
+          <span class="line reveal" data-delay="200">Every facet.</span>
+          <span class="line italic-gold serif reveal" data-delay="400">Perfect.</span>
+        </h2>
+        <a href="contact.html" class="btn btn--primary shimmer" data-cursor>Book the Atelier</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="logo">NOCTURNE</div>
+          <p>Fine jewelry forged in darkness, finished by hand. Established in the small hours.</p>
+          <div class="footer__socials">
+            <a href="#" aria-label="Instagram" data-cursor><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+            <a href="#" aria-label="TikTok" data-cursor><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M15 4c.5 2.5 2 4 4.5 4.3"/><path d="M15 4v9.5a4.5 4.5 0 1 1-4-4.47"/></svg></a>
+            <a href="#" aria-label="Pinterest" data-cursor><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="9"/><path d="M12 7c-2 0-3.2 1.4-3.2 3 0 .9.4 1.6 1 1.9M12 7c1.8 0 3 1.1 3 2.8 0 2-1.1 3.4-2.6 3.4-.8 0-1.4-.6-1.2-1.4M11.2 12.7 10 18"/></svg></a>
+          </div>
+        </div>
+        <div class="footer__col"><h4>Collections</h4><ul><li><a href="collections.html" data-cursor>Rings</a></li><li><a href="collections.html" data-cursor>Necklaces</a></li><li><a href="collections.html" data-cursor>Earrings</a></li><li><a href="collections.html" data-cursor>High Jewelry</a></li></ul></div>
+        <div class="footer__col"><h4>Services</h4><ul><li><a href="bespoke.html" data-cursor>Bespoke Design</a></li><li><a href="contact.html" data-cursor>Book Appointment</a></li><li><a href="craft.html" data-cursor>Care &amp; Repair</a></li><li><a href="craft.html" data-cursor>Engraving</a></li></ul></div>
+        <div class="footer__col"><h4>Contact</h4><ul><li><a href="contact.html" data-cursor>The Atelier</a></li><li><a href="contact.html" data-cursor>Client Care</a></li><li><a href="contact.html" data-cursor>+1 (000) 000 0000</a></li><li><a href="contact.html" data-cursor>night@nocturne.com</a></li></ul></div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 NOCTURNE. All rights reserved.</span>
+        <div class="legal"><a href="privacy.html" data-cursor>Privacy</a><a href="terms.html" data-cursor>Terms</a><a href="cookies.html" data-cursor>Cookies</a></div>
+        <span class="tagline">Crafted with obsession.</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top" data-cursor><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="m6 14 6-6 6 6"/></svg></button>
+
+  <script src="js/main.js?v=16" defer></script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://images.unsplash.com data:; media-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="color-scheme" content="dark" />
+  <title>NOCTURNE — Jewelry for those who wear the night</title>
+  <meta name="description" content="NOCTURNE — dark luxury fine jewelry. Forged in darkness, finished by hand. A house devoted to the night." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css?v=16" />
+  <link rel="stylesheet" href="css/base.css?v=16" />
+  <link rel="stylesheet" href="css/components.css?v=16" />
+  <link rel="stylesheet" href="css/pages.css?v=16" />
+</head>
+<body>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <div id="loader" aria-hidden="true"><div class="brand">NOCTURNE</div><div class="load-line"></div></div>
+
+  <!-- ===== NAV (even 3-column grid, centered wordmark) ===== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <div class="nav__left">
+        <a class="nav__link" href="collections.html" data-cursor>Collections</a>
+        <a class="nav__link" href="bespoke.html" data-cursor>Bespoke</a>
+        <a class="nav__link" href="craft.html" data-cursor>Craft</a>
+      </div>
+      <a href="index.html" class="nav__logo" data-cursor>NOCTURNE</a>
+      <div class="nav__right">
+        <button class="icon-btn" data-desktop aria-label="Search" data-cursor><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+        <button class="icon-btn" aria-label="Shopping bag" data-cursor><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg><span class="bag-count">2</span></button>
+        <a class="btn-appointment" data-desktop href="contact.html" data-cursor>Book an Appointment</a>
+        <button class="nav__hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" data-cursor><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="collections.html" data-cursor>Collections</a>
+    <a href="bespoke.html" data-cursor>Bespoke</a>
+    <a href="craft.html" data-cursor>Craft</a>
+    <a href="contact.html" data-cursor>Contact</a>
+    <span class="mm-sep"></span>
+    <a href="contact.html" class="gold" data-cursor>Book an Appointment</a>
+  </div>
+
+  <main>
+    <!-- ===== HERO — looped video ===== -->
+    <section class="hero" id="hero">
+      <div class="hero__media">
+        <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="">
+          <source src="assets/video/hero-stars.mp4?v=16" type="video/mp4" />
+        </video>
+      </div>
+      <div class="hero__grade"></div>
+      <div class="hero__content">
+        <div class="wrap">
+          <p class="eyebrow hero__eyebrow reveal">The New Collection — 2026</p>
+          <h1 class="hero__headline">
+            <span class="line reveal" data-delay="80"><span>Forged in</span></span>
+            <span class="line reveal" data-delay="220"><span class="italic-gold serif">Darkness.</span></span>
+          </h1>
+          <p class="hero__subline reveal" data-delay="360">Jewelry for those who wear the night.</p>
+          <div class="hero__cta reveal" data-delay="480">
+            <a href="collections.html" class="btn btn--primary shimmer" data-cursor>Explore Collection</a>
+            <a href="craft.html" class="btn btn--text" data-cursor>Our Story</a>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-hint" aria-hidden="true"><span>Scroll</span><div class="track"></div></div>
+    </section>
+
+    <!-- ===== BRAND STATEMENT ===== -->
+    <section class="statement wrap">
+      <p class="reveal">We do not follow the light.<br/>We <span class="word-gold">become</span> it.</p>
+    </section>
+
+    <!-- ===== FEATURED COLLECTIONS ===== -->
+    <section class="section-pad" id="collections">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="eyebrow reveal">Maison Collections</p>
+          <h2 class="section-title reveal" data-delay="80">Curated for the after hours.</h2>
+        </div>
+        <div class="collections__grid collections__grid--feature" id="featuredGrid"></div>
+        <div class="center" style="margin-top:var(--space-lg)">
+          <a href="collections.html" class="btn btn--text reveal" data-cursor>View All Collections →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EDITORIAL FEATURE (VCA split) ===== -->
+    <section class="feature">
+      <div class="feature__img reveal" style="background-image:linear-gradient(180deg, rgba(7,7,7,0.25), rgba(7,7,7,0.55)), url('https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=1100&q=80&auto=format&fit=crop');"></div>
+      <div class="feature__body">
+        <p class="eyebrow reveal">The Obsidian Solitaire</p>
+        <h2 class="reveal" data-delay="80">A single stone,<br/>held against the dark.</h2>
+        <p class="reveal" data-delay="160">Our signature engagement piece — a brilliant cut suspended in a band drawn from a single ingot. Configure it in your metal, set with the stone of your story.</p>
+        <div class="reveal" data-delay="240"><a href="bespoke.html" class="btn btn--primary shimmer" data-cursor>Design Yours</a></div>
+      </div>
+    </section>
+
+    <!-- ===== CRAFT TEASER ===== -->
+    <section class="section-pad">
+      <div class="wrap craft">
+        <div class="craft__text reveal">
+          <p class="eyebrow">Our Craft</p>
+          <h2>800 Hours of<br/>Pure Devotion.</h2>
+          <p>Each NOCTURNE piece begins as raw ore and ends as inheritance. Between those states lies the patient hand of a master who refuses every compromise.</p>
+          <div class="craft__stats">
+            <div class="craft-stat"><div class="num">800</div><div class="label">Hours</div></div>
+            <div class="craft-stat"><div class="num">47</div><div class="label">Artisans</div></div>
+            <div class="craft-stat"><div class="num">142</div><div class="label">Years</div></div>
+          </div>
+          <a href="craft.html" class="btn--text" data-cursor>Learn Our Process →</a>
+        </div>
+        <div class="craft__canvas-wrap reveal" data-delay="120"><canvas id="craft-canvas"></canvas></div>
+      </div>
+    </section>
+
+    <!-- ===== CELESTIAL / MATERIAL ===== -->
+    <section class="celestial" id="celestial">
+      <canvas id="celestial-canvas"></canvas>
+      <div class="celestial__content">
+        <h2>
+          <span class="line reveal">Every atom.</span>
+          <span class="line reveal" data-delay="200">Every facet.</span>
+          <span class="line italic-gold serif reveal" data-delay="400">Perfect.</span>
+        </h2>
+        <a href="craft.html" class="btn btn--primary shimmer" data-cursor>Explore Materials</a>
+      </div>
+    </section>
+
+    <!-- ===== PRESS ===== -->
+    <section class="section-pad press" id="press">
+      <div class="wrap">
+        <div class="press__quotemark" aria-hidden="true">&ldquo;</div>
+        <div class="quote-carousel">
+          <div class="quote-slide active"><p>NOCTURNE has redefined what darkness can mean in fine jewelry — opulent, restrained, unforgettable.</p><div class="attr">Vogue</div></div>
+          <div class="quote-slide"><p>The Obsidian Solitaire is, quite simply, the most beautiful ring we have photographed this decade.</p><div class="attr">Harper&rsquo;s Bazaar</div></div>
+          <div class="quote-slide"><p>A house obsessed with the night, and all the better for it. Craft of the highest order.</p><div class="attr">The Wall Street Journal</div></div>
+          <div class="quote-slide"><p>Wearing NOCTURNE feels less like an accessory and more like a quiet act of defiance.</p><div class="attr">Financial Times — How To Spend It</div></div>
+        </div>
+        <div class="quote-dots" id="quoteDots" role="tablist" aria-label="Testimonials"></div>
+        <div class="press-logos reveal">
+          <div class="label">As Seen In</div>
+          <div class="logos"><span>VOGUE</span><span>WSJ</span><span>HARPER&rsquo;S BAZAAR</span><span>GQ</span><span>FT</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== NEWSLETTER ===== -->
+    <section class="newsletter" id="newsletter">
+      <canvas id="noise-canvas"></canvas>
+      <div class="newsletter__inner reveal">
+        <h2>Join the Inner Circle.</h2>
+        <p>First access to new collections. Private events. The world of NOCTURNE.</p>
+        <form class="newsletter__form" id="newsletterForm">
+          <label for="nl-email" style="position:absolute;left:-9999px">Email address</label>
+          <input id="nl-email" type="email" placeholder="Your email address" required />
+          <button class="newsletter__submit" type="submit" aria-label="Subscribe" data-cursor><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></button>
+        </form>
+        <p class="privacy">We respect the night, and your privacy. Unsubscribe anytime.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="logo">NOCTURNE</div>
+          <p>Fine jewelry forged in darkness, finished by hand. Established in the small hours.</p>
+          <div class="footer__socials">
+            <a href="#" aria-label="Instagram" data-cursor><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+            <a href="#" aria-label="TikTok" data-cursor><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M15 4c.5 2.5 2 4 4.5 4.3"/><path d="M15 4v9.5a4.5 4.5 0 1 1-4-4.47"/></svg></a>
+            <a href="#" aria-label="Pinterest" data-cursor><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="9"/><path d="M12 7c-2 0-3.2 1.4-3.2 3 0 .9.4 1.6 1 1.9M12 7c1.8 0 3 1.1 3 2.8 0 2-1.1 3.4-2.6 3.4-.8 0-1.4-.6-1.2-1.4M11.2 12.7 10 18"/></svg></a>
+          </div>
+        </div>
+        <div class="footer__col"><h4>Collections</h4><ul><li><a href="collections.html" data-cursor>Rings</a></li><li><a href="collections.html" data-cursor>Necklaces</a></li><li><a href="collections.html" data-cursor>Earrings</a></li><li><a href="collections.html" data-cursor>High Jewelry</a></li></ul></div>
+        <div class="footer__col"><h4>Services</h4><ul><li><a href="bespoke.html" data-cursor>Bespoke Design</a></li><li><a href="contact.html" data-cursor>Book Appointment</a></li><li><a href="craft.html" data-cursor>Care &amp; Repair</a></li><li><a href="craft.html" data-cursor>Engraving</a></li></ul></div>
+        <div class="footer__col"><h4>Contact</h4><ul><li><a href="contact.html" data-cursor>The Atelier</a></li><li><a href="contact.html" data-cursor>Client Care</a></li><li><a href="contact.html" data-cursor>+1 (000) 000 0000</a></li><li><a href="contact.html" data-cursor>night@nocturne.com</a></li></ul></div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 NOCTURNE. All rights reserved.</span>
+        <div class="legal"><a href="privacy.html" data-cursor>Privacy</a><a href="terms.html" data-cursor>Terms</a><a href="cookies.html" data-cursor>Cookies</a></div>
+        <span class="tagline">Crafted with obsession.</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top" data-cursor><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="m6 14 6-6 6 6"/></svg></button>
+
+  <script src="js/main.js?v=16" defer></script>
+  <script src="js/data.js?v=16" defer></script>
+</body>
+</html>

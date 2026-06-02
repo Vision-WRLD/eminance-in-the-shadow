@@ -1,0 +1,158 @@
+/* ============================================================
+   NOCTURNE — BASE: reset, typography, utilities, cursor, loader
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+body.menu-open { overflow: hidden; }
+
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; border: none; background: none; color: inherit; }
+input, textarea, select { font-family: inherit; }
+canvas { display: block; }
+ul { list-style: none; }
+
+::selection { background: var(--color-gold); color: var(--color-bg); }
+:focus-visible { outline: 2px solid var(--color-gold); outline-offset: 4px; }
+
+/* Thin gold scrollbar */
+::-webkit-scrollbar { width: 9px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-gold-muted); }
+::-webkit-scrollbar-thumb:hover { background: var(--color-gold); }
+
+/* ---- Layout helpers ---- */
+.wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 var(--space-md); }
+.section-pad { padding: var(--space-xl) 0; }
+.center { text-align: center; }
+.measure { max-width: var(--maxw-text); margin-left: auto; margin-right: auto; }
+
+/* ---- Type primitives ---- */
+/* polish: even heading lines, fewer orphans in prose */
+h1, h2, h3, .section-title, .hero__headline, .page-hero h1, .pdp__name, .co-done h2 { text-wrap: balance; }
+p, .lead, .pdp__story { text-wrap: pretty; }
+
+.serif { font-family: var(--font-display); font-weight: 300; }
+.italic { font-style: italic; }
+.gold { color: var(--color-gold); }
+.italic-gold { font-style: italic; color: var(--color-gold); }
+
+.eyebrow {
+  font-size: var(--text-xs);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-gold);
+  font-weight: 500;
+  display: inline-block;
+}
+.eyebrow--jade { color: var(--color-jade); }
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: var(--text-4xl);
+  line-height: 1.04;
+  letter-spacing: 0.01em;
+}
+.lead {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-style: italic;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+/* Hairline rule — VCA delicate gold lines */
+.rule { width: 40px; height: 1px; background: var(--color-gold); display: inline-block; }
+.rule--center { margin: var(--space-sm) auto; }
+
+/* ---- Custom cursor ---- */
+/* custom cursor removed — was laggy; using the native cursor */
+.cursor-dot, .cursor-ring { display: none !important; }
+
+/* ---- Loader (fast, non-blocking, no FOUC) ---- */
+#loader {
+  position: fixed; inset: 0; background: var(--color-bg); z-index: 9999;
+  display: flex; align-items: center; justify-content: center; flex-direction: column; gap: var(--space-sm);
+}
+#loader .brand {
+  font-family: var(--font-display); font-size: var(--text-3xl);
+  letter-spacing: var(--ls-wordmark); color: var(--color-gold-pale);
+  opacity: 0; padding-left: var(--ls-wordmark);
+}
+#loader .load-line { width: 0; height: 1px; background: var(--color-gold); opacity: 0.6; }
+.no-js #loader { display: none; }
+
+/* ---- Reveal base ---- */
+.reveal { opacity: 0; transform: translateY(28px); }
+.reveal.in {
+  opacity: 1; transform: none;
+  transition: opacity var(--duration-slow) var(--ease-luxury),
+              transform var(--duration-slow) var(--ease-luxury);
+}
+
+/* ---- Buttons ---- */
+.btn {
+  position: relative; overflow: hidden; display: inline-block;
+  font-size: 11px; letter-spacing: var(--ls-nav); text-transform: uppercase;
+  padding: 16px 34px; line-height: 1;
+  transition: color var(--duration-mid) var(--ease-luxury), background var(--duration-mid) var(--ease-luxury);
+}
+.btn--primary { border: 1px solid var(--color-gold); color: var(--color-gold); }
+.btn--primary::after {
+  content: ''; position: absolute; inset: 0; background: var(--color-gold);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform var(--duration-mid) var(--ease-luxury); z-index: -1;
+}
+.btn--primary:hover { color: var(--color-bg); }
+.btn--primary:hover::after { transform: scaleX(1); }
+
+.btn--solid { background: var(--color-gold); color: var(--color-bg); }
+.btn--solid:hover { background: var(--color-gold-light); }
+
+.btn--text { padding: 16px 0; color: var(--color-text-primary); }
+.btn--text::after {
+  content: ''; position: absolute; left: 0; bottom: 10px; width: 100%; height: 1px;
+  background: var(--color-gold); transform: scaleX(0); transform-origin: left;
+  transition: transform var(--duration-mid) var(--ease-luxury);
+}
+.btn--text:hover { color: var(--color-gold); }
+.btn--text:hover::after { transform: scaleX(1); }
+
+/* Shimmer sweep */
+.shimmer::before {
+  content: ''; position: absolute; top: 0; left: -120%; width: 80%; height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(245,230,184,0.28), transparent);
+  transform: skewX(-20deg); transition: left var(--duration-slow) var(--ease-luxury);
+}
+.shimmer:hover::before { left: 130%; }
+
+/* ---- Animated underline link ---- */
+.ulink { position: relative; transition: color var(--duration-fast) ease; }
+.ulink::after {
+  content: ''; position: absolute; left: 0; bottom: -3px; width: 100%; height: 1px;
+  background: var(--color-gold); transform: scaleX(0); transform-origin: left;
+  transition: transform var(--duration-mid) var(--ease-luxury);
+}
+.ulink:hover { color: var(--color-gold); }
+.ulink:hover::after { transform: scaleX(1); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+}

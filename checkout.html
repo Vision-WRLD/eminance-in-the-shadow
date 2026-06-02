@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://images.unsplash.com data:; media-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="color-scheme" content="dark" />
+  <title>Checkout — NOCTURNE</title>
+  <meta name="description" content="Complete your NOCTURNE order." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css?v=16" />
+  <link rel="stylesheet" href="css/base.css?v=16" />
+  <link rel="stylesheet" href="css/components.css?v=16" />
+  <link rel="stylesheet" href="css/pages.css?v=16" />
+</head>
+<body>
+  <div id="loader" aria-hidden="true"><div class="brand">NOCTURNE</div><div class="load-line"></div></div>
+
+  <header class="nav scrolled" id="nav">
+    <div class="nav__inner">
+      <div class="nav__left">
+        <a class="nav__link" href="collections.html" data-cursor>Collections</a>
+        <a class="nav__link" href="bespoke.html" data-cursor>Bespoke</a>
+        <a class="nav__link" href="craft.html" data-cursor>Craft</a>
+      </div>
+      <a href="index.html" class="nav__logo" data-cursor>NOCTURNE</a>
+      <div class="nav__right">
+        <button class="icon-btn" data-desktop aria-label="Search" data-cursor><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+        <button class="icon-btn" aria-label="Shopping bag" data-cursor><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg><span class="bag-count">0</span></button>
+        <a class="btn-appointment" data-desktop href="contact.html" data-cursor>Book an Appointment</a>
+        <button class="nav__hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" data-cursor><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="collections.html" data-cursor>Collections</a>
+    <a href="bespoke.html" data-cursor>Bespoke</a>
+    <a href="craft.html" data-cursor>Craft</a>
+    <a href="contact.html" data-cursor>Contact</a>
+    <span class="mm-sep"></span>
+    <a href="contact.html" class="gold" data-cursor>Book an Appointment</a>
+  </div>
+
+  <main class="checkout-main">
+    <div class="wrap">
+      <div class="page-hero" style="padding:calc(var(--nav-h) + var(--space-lg)) 0 var(--space-md);text-align:left">
+        <p class="eyebrow">Secure Checkout</p>
+        <h1 style="font-size:var(--text-4xl);margin-top:8px">Complete your order</h1>
+      </div>
+
+      <div class="checkout" id="checkoutWrap">
+        <!-- Form -->
+        <form class="checkout__form" id="checkoutForm">
+          <section class="co-block">
+            <h3 class="co-h">Contact</h3>
+            <div class="field"><label for="ceEmail">Email</label><input id="ceEmail" type="email" required placeholder="you@example.com" /></div>
+          </section>
+          <section class="co-block">
+            <h3 class="co-h">Shipping</h3>
+            <div class="row"><div class="field"><label for="cFn">First name</label><input id="cFn" required placeholder="Evelyn" /></div><div class="field"><label for="cLn">Last name</label><input id="cLn" required placeholder="Sterling" /></div></div>
+            <div class="field"><label for="cAddr">Address</label><input id="cAddr" required placeholder="No. 12, Obsidian Court" /></div>
+            <div class="row"><div class="field"><label for="cCity">City</label><input id="cCity" required placeholder="London" /></div><div class="field"><label for="cZip">Postcode</label><input id="cZip" required placeholder="W1" /></div></div>
+            <div class="field"><label for="cCountry">Country</label><select id="cCountry"><option>United Kingdom</option><option>United States</option><option>Canada</option><option>France</option><option>Other</option></select></div>
+          </section>
+          <section class="co-block">
+            <h3 class="co-h">Payment</h3>
+            <div class="field"><label for="cCard">Card number</label><input id="cCard" inputmode="numeric" required placeholder="4242 4242 4242 4242" /></div>
+            <div class="row"><div class="field"><label for="cExp">Expiry</label><input id="cExp" required placeholder="MM/YY" /></div><div class="field"><label for="cCvc">CVC</label><input id="cCvc" required placeholder="123" /></div></div>
+          </section>
+          <button type="submit" class="btn btn--solid co-pay" id="coPay">Place Order</button>
+          <p class="co-secure">✦ Encrypted. Your piece ships in its velvet case within 2 evenings.</p>
+        </form>
+
+        <!-- Summary -->
+        <aside class="checkout__summary">
+          <h3 class="co-h">Order Summary</h3>
+          <div class="co-items" id="coItems"></div>
+          <div class="co-line"><span>Subtotal</span><span id="coSub">—</span></div>
+          <div class="co-line"><span>Shipping</span><span>Complimentary</span></div>
+          <div class="co-line co-line--total"><span>Total</span><span id="coTotal">—</span></div>
+        </aside>
+      </div>
+
+      <!-- Confirmation -->
+      <div class="co-done" id="coDone" hidden>
+        <div class="co-done__mark">✦</div>
+        <h2 class="serif">Order placed</h2>
+        <p>Thank you. Order <strong id="coOrderNo"></strong> is confirmed. A NOCTURNE concierge will email you shortly; your piece ships in its velvet case within two evenings.</p>
+        <a href="collections.html" class="btn btn--primary shimmer" data-cursor>Continue exploring</a>
+      </div>
+
+      <!-- Empty -->
+      <div class="co-empty" id="coEmpty" hidden>
+        <p class="serif">Your bag is empty.</p>
+        <a href="collections.html" class="btn btn--primary shimmer" data-cursor>Explore the collection</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__bottom" style="border-top:none">
+        <span>© 2026 NOCTURNE. All rights reserved.</span>
+        <span class="tagline">Crafted with obsession.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js?v=16" defer></script>
+  <script src="js/checkout.js?v=16" defer></script>
+</body>
+</html>
