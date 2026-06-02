@@ -419,9 +419,13 @@
   .nav__left .nav__link, .btn-appointment, .icon-btn[data-desktop] { display: none; }
   .icon-btn[aria-label="Search"] { display: grid; }   /* keep search reachable on mobile */
   .nav__hamburger { display: flex; }
-  .nav__left { justify-self: start; }
+  /* flex nav so the icon cluster can't overflow a narrow grid column and get clipped */
+  .nav__inner { display: flex; align-items: center; justify-content: space-between; }
+  .nav__logo { position: static; transform: none; justify-self: auto; font-size: var(--text-xl); }
+  .nav__left { flex: 0 0 auto; }
+  .nav__right { flex: 0 0 auto; gap: var(--space-xs); }
 }
-@media (max-width: 380px) { .nav__right { gap: 2px; } .icon-btn { width: 32px; } }
+@media (max-width: 380px) { .nav__right { gap: 4px; } .icon-btn { width: 34px; } .nav__logo { font-size: var(--text-lg); } }
 @media (max-width: 768px) {
   .footer__grid { grid-template-columns: 1fr 1fr; gap: var(--space-md); }
   .footer__brand { grid-column: 1 / -1; }
